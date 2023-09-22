@@ -1,8 +1,8 @@
 /*******
-* BASIS
-* MOBILE
-* DESKTOP
-*
+ BASIS
+ MOBILE
+ DESKTOP
+
 *********/
 
 :root {
@@ -12,7 +12,7 @@
 
 /* ----------------  BASIS  ----------------*/
 
-* {   
+*{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
@@ -21,69 +21,63 @@
 body {
     width: 100vw;
     height: 100vh;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
-    background-color: black;
+    font-size: 17px;
+    color: white;
+    font-family: 'Open Sanse', sans-serif;
 }
 
-h1, h2 {
-    font-family: 'Poppins', sans-serif;
-    color: white; 
+.main-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Violet);
+    background-repeat: no-repeat;
 }
 
-p {
-    margin-top: 15px;   
-    color: white; 
-    font-family: 'Poppins', sans-serif;
+.wrap {
+    display: grid;
+    /*bepaal de vaste hoogte van de Header en Footer*/
+    grid-template-rows: 125px 1fr 75px;
+}
+
+.header {
+    display: grid; 
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .main {
-    display: flex;
-    overflow: hidden;
-}
-
-.logo img { 
-   width: 180px;
-}
-
-.center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Open Sans', sans-serif;  
-}
-
-.text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;   
 }
 
 .text h1 {
-    width: 340px;
-    text-align: center;
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
 .text p {
-    text-align: center;
-    font-size: 22px;
-    font-weight: 400;    
-    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6em;
+    padding-bottom: 25px;
 }
 
-.text button {
-    width: 260px;
-    text-align: center;
-    padding: 15px;
+.text button {    
     color: var(--Violet);
-    font-family: 'Open Sans', sans-serif;
     background-color: white;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 16px;
     border: 0;
+    border-radius: 50px;
+    width: 200px;
+    height: 40px;
+    font-size: 13px;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .text button:hover {
@@ -92,22 +86,23 @@ p {
     color: white;
 }
 
-.icons {
-    width: 180px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+.footer {
+    display: grid;  
+    flex-direction: row;
 }
 
-.icon i {  
-    margin-top: 5px;   
-    border-radius: 50px; 
-    border: 1px solid white; 
-    color: white;
-    font-size: 20px;    
+.footer .icons {
+    display: flex;
+    justify-content: space-between;
+    width: 113px; 
 }
-.icon .fa-facebook-f {
-    padding :10px 14px;
+
+i { 
+    color: white;
+    font-size: 16px; 
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 7px;
 }
 
 .icon i:hover {
@@ -115,159 +110,125 @@ p {
     color: var(--Soft-Magenta);
 }
 
-.footer{
-    display: flex;
-    justify-content: center;
+
+.fa-facebook-f {
+    padding: 7px 9px;
 }
 
+/* ----------------  MOBILE  ----------------*/
+@media only screen and (max-width: 1440px) {
 
-/* ---------------   MOBILE   ------------------*/
-
-@media only screen and (min-width: 375px){
-
-    .container-main {
+    .main-container {
+        width: 373px;
         background-image: url(./images/bg-mobile.svg);
-        background-color: var(--Violet);
         background-repeat: no-repeat;
     }
 
+    .wrap {
+        width: 333px;
+        flex-direction: column;
+    }
+  
+    .logo img {
+        width: 143px;
+        padding: 0px 0px 35px 15px;
+    }
+    
     .main {
-        display: flex;    
-        flex-direction: column; 
-        width: 400px;
+        text-align: center;  
+    }
+    
+    .image img{
+        width: 300px;
+    }
+    
+    .text {
+        padding: 60px 13px;
     }
 
-    .logo img {    
-        padding-bottom: 0px;
-        padding-left: 20px;
-        width: 180px;
-        height: 180px;        
+    .text h1 {       
+        font-size: 24px;
     }
 
-    img {      
-        width: 375px;
-        height: 250px;
-        object-fit: contain; 
+    .footer {
+        justify-content: center;
     }
 
-    .text-container {
-        width: 350px;      
-        font-family: 'Open Sans', sans-serif;  
-    }
-
-    .text h1 {
-        width: 400px;
-        text-align: center;
-    }
-
-    .text p {    
-        font-size: 18px;
-        width: 330px;
-        padding: 20px;
-        text-align: center;
-        font-family: 'Open Sans', sans-serif;        
-    }
-
-    .icons{     
-        align-items: center;
-        margin-top: 70px;
-    }
-
-    .icon i {  
-        margin-top: 5px;   
-        border-radius: 50px;
-        padding: 10px;
-        border: 2px solid white; 
-    }
 }
 
-/*----------------  DESKTOP   ------------------*/
+/* ----------------  DESKTOP  ----------------*/
+@media only screen and (min-width: 1440px){
 
-@media only screen and (min-width: 1150px){
-
-    .container-main {
+    .main-container {
         background-image: url(./images/bg-desktop.svg);
-        background-color: var(--Violet);        
-        background-repeat: no-repeat;
-        width: 1400px;
-        height: 800px;           
-        display:flex; 
-        justify-content: center;
-        align-items: center;  
+        width: 1440px;
+        height: 800px;        
+    }
+
+    .wrap {
+        width: 1300px;
+    }
+
+    .logo img {
+        width: 220px;
+        padding: 0px 0px 35px 0px;
     }
 
     .main {
-        flex-direction: column;
-        width: 1080px;
-    }
-
-    .logo img {        
-        padding-bottom: 10px;
-        width: 180px;
-        height: 180px;    
-        padding-left: 0px;    
-    }
-
-    .image img {
-        width: 540px;
-        height: 385px;
-        object-fit: contain;   
-    }
-
-    .center-container {
         display: flex;
         flex-direction: row;
-        width: 1080px;
-        font-family: 'Open Sans', sans-serif;  
+        text-align: left;  
     }
 
-    .text-container { 
-        display: flex;
-        padding-left: 50px;
-        width: 540px;
-        flex-direction: column;
+    .image img{
+        padding-top: 50px;
+        width: 709px;
     }
 
     .text {
-        align-items: flex-start;
+        padding: 30px;
+        padding-top: 75px;
+        padding-left: 50px;
     }
 
-    .text h1{ 
-        align-items: flex-start;
-        text-align: left;  
-        width: 400px;
+    .text h1 {
+        padding-top: 10px;
+        font-size: 40px;
     }
 
-    .text p { 
-        width: 480px;
-        line-height: 25px;
-        text-align: left;
-        padding: 20px;
-        padding-left: 0px;
-        align-items: flex-start;        
-        font-family: 'Open Sans', sans-serif;    
-    } 
+    .text p {
+        padding-right: 20px;
+        font-size: 18px;
+    }
 
     .text button {
-        width: 180px;
-        text-align: center;
-        padding: 15px;
-        color: var(--Violet);
-        font-family: 'Open Sans', sans-serif;
-        background-color: white;
-        border-radius: 50px;
-        font-weight: 600;
-        align-items: flex-start;
+        width: 200px;
+        height: 50px;
+        font-size: 16px;        
     }
-    
-    .text button:hover {
-        background-color: var(--Soft-Magenta);
-        cursor: pointer;
-        color: white;
-    }
-    
+
     .footer {
-        display: flex;
         justify-content: flex-end;
+    }
+
+    .footer .icons {
+        display: flex;
+        justify-content: space-between;
+        width: 150px; 
+    }
+
+    i { 
+        font-size: 20px; 
+        border-radius: 50px;
+        border: 1px solid white;
+        padding: 10px;
+    }
+
+    .fa-facebook-f {
+        padding: 10px 13px;      
+    }
+    
+    .fa-instagram {
+        padding: 10px 12px;      
     }
 }
